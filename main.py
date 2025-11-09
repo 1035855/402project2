@@ -11,21 +11,21 @@ def main():
             age = float(input("Please enter the age of the cat (years): "))
             break
         except ValueError:
-            print("❗ Please enter a valid number for age!")
+            print("Please enter a valid number for age!")
 
     while True:
         try:
             weight = float(input("Please enter the weight of the cat (kg): "))
             break
         except ValueError:
-            print("❗ Please enter a valid number for weight!")
+            print("Please enter a valid number for weight!")
 
     while True:
         activity = input("Please enter the activity level (low / medium / high): ").lower().strip()
         if activity in ["low", "medium", "high"]:
             break
         else:
-            print("❗ Please enter only: low, medium, or high.")
+            print("Please enter only: low, medium, or high.")
 
     while True:
         neutered = input("Has the cat been neutered? (y/n): ").lower().strip()
@@ -33,7 +33,7 @@ def main():
             neutered = (neutered == "y")
             break
         else:
-            print("❗ Please enter y or n.")
+            print("Please enter y or n.")
 
     cat = Cat(name, age, weight, activity, neutered)
     calorie = cat.calculate_calorie()
@@ -42,7 +42,7 @@ def main():
     meal = Meal(calorie)
     plan = meal.generate_plan()
 
-    print("\n🐾 Recommended cat meal plan:")
+    print("Recommended cat meal plan:")
     for k, v in plan.items():
         print(f"{k}: {v}")
 
